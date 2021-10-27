@@ -69,9 +69,17 @@ async function run() {
 
     let base;
     let current;
-
+      
     try {
       base = limit.parseResults(baseOutput);
+    } catch (error) {
+      console.log(
+        "Size limit failed in the base branch, treating everything as a new file."
+      );
+      base = {};
+    }
+
+    try {
       current = limit.parseResults(output);
     } catch (error) {
       console.log(
