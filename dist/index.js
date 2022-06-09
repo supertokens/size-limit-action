@@ -10589,7 +10589,7 @@ class Term {
                 yield exec_1.exec(`git checkout -f ${branch}`);
             }
             if (skipStep !== INSTALL_STEP && skipStep !== BUILD_STEP) {
-                yield exec_1.exec(`${manager} install`, [], {
+                yield exec_1.exec(`${manager} install --force`, [], {
                     cwd: directory
                 });
             }
